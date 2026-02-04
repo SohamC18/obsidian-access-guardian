@@ -45,9 +45,18 @@ export default function Users() {
                 </select>
               </td>
 
-              <td style={{ color: u.risk > 50 ? "red" : "green" }}>
-                {u.risk}
-              </td>
+              <td>
+                  <span style={{ color: u.risk > 50 ? "red" : "green" }}>
+                    {u.risk}
+                  </span>
+
+                  {u.risk > 50 && (
+                    <div style={{ fontSize: "12px", color: "#555" }}>
+                      Retained permissions from previous role
+                    </div>
+                  )}
+                </td>
+
             </tr>
           ))}
         </tbody>
